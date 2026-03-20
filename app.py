@@ -14,7 +14,6 @@ Deployed on Hugging Face Spaces with a Gradio interface.
 
 import json
 import re
-import textwrap
 
 import gradio as gr
 import yake
@@ -174,59 +173,15 @@ def analyze(text: str, summary_ratio: int = 30) -> tuple[str, str, str, str]:
 
 EXAMPLES = [
     [
-        textwrap.dedent("""\
-        The Transformer architecture, introduced in the 2017 paper "Attention Is All You Need" by \
-        Vaswani et al. at Google, fundamentally changed the landscape of natural language processing. \
-        Unlike recurrent neural networks that process sequences step by step, Transformers use a \
-        mechanism called self-attention to process all positions in a sequence simultaneously. This \
-        parallelism enables much faster training on modern hardware. The key innovation is the \
-        multi-head attention mechanism, which allows the model to jointly attend to information from \
-        different representation subspaces at different positions. The architecture consists of an \
-        encoder-decoder structure, though many successful variants use only the encoder (BERT) or \
-        only the decoder (GPT). Since its introduction, the Transformer has become the foundation \
-        for virtually all state-of-the-art language models, including GPT-4, Claude, PaLM, and \
-        LLaMA. Its influence extends beyond NLP into computer vision (Vision Transformers), \
-        protein structure prediction (AlphaFold), and audio processing. The scaling properties of \
-        Transformers have driven the large language model revolution, with models now containing \
-        hundreds of billions of parameters trained on trillions of tokens of text data."""),
+        "The Transformer architecture, introduced in the 2017 paper \"Attention Is All You Need\" by Vaswani et al. at Google, fundamentally changed the landscape of natural language processing. Unlike recurrent neural networks that process sequences step by step, Transformers use a mechanism called self-attention to process all positions in a sequence simultaneously. This parallelism enables much faster training on modern hardware. The key innovation is the multi-head attention mechanism, which allows the model to jointly attend to information from different representation subspaces at different positions. The architecture consists of an encoder-decoder structure, though many successful variants use only the encoder (BERT) or only the decoder (GPT). Since its introduction, the Transformer has become the foundation for virtually all state-of-the-art language models, including GPT-4, Claude, PaLM, and LLaMA. Its influence extends beyond NLP into computer vision (Vision Transformers), protein structure prediction (AlphaFold), and audio processing. The scaling properties of Transformers have driven the large language model revolution, with models now containing hundreds of billions of parameters trained on trillions of tokens of text data.",
         30,
     ],
     [
-        textwrap.dedent("""\
-        CRISPR-Cas9 is a revolutionary gene-editing technology that allows scientists to make \
-        precise changes to DNA sequences in living organisms. Discovered as part of the bacterial \
-        immune system, CRISPR (Clustered Regularly Interspaced Short Palindromic Repeats) works \
-        by using a guide RNA to direct the Cas9 enzyme to a specific location in the genome, \
-        where it cuts the DNA. The cell's natural repair mechanisms then fix the break, either \
-        disabling the gene or inserting new genetic material. Jennifer Doudna and Emmanuelle \
-        Charpentier were awarded the 2020 Nobel Prize in Chemistry for developing this technology. \
-        CRISPR has enormous potential in medicine, agriculture, and biotechnology. In medicine, \
-        it is being explored for treating genetic disorders like sickle cell disease, muscular \
-        dystrophy, and certain cancers. Clinical trials are underway for several CRISPR-based \
-        therapies. In agriculture, CRISPR is used to develop disease-resistant crops and improve \
-        nutritional content. However, the technology also raises significant ethical concerns, \
-        particularly regarding germline editing — changes that can be inherited by future \
-        generations. The case of He Jiankui, who controversially created the first gene-edited \
-        babies in 2018, highlighted the urgent need for international regulatory frameworks."""),
+        "CRISPR-Cas9 is a revolutionary gene-editing technology that allows scientists to make precise changes to DNA sequences in living organisms. Discovered as part of the bacterial immune system, CRISPR (Clustered Regularly Interspaced Short Palindromic Repeats) works by using a guide RNA to direct the Cas9 enzyme to a specific location in the genome, where it cuts the DNA. The cell's natural repair mechanisms then fix the break, either disabling the gene or inserting new genetic material. Jennifer Doudna and Emmanuelle Charpentier were awarded the 2020 Nobel Prize in Chemistry for developing this technology. CRISPR has enormous potential in medicine, agriculture, and biotechnology. In medicine, it is being explored for treating genetic disorders like sickle cell disease, muscular dystrophy, and certain cancers. Clinical trials are underway for several CRISPR-based therapies. In agriculture, CRISPR is used to develop disease-resistant crops and improve nutritional content. However, the technology also raises significant ethical concerns, particularly regarding germline editing — changes that can be inherited by future generations. The case of He Jiankui, who controversially created the first gene-edited babies in 2018, highlighted the urgent need for international regulatory frameworks.",
         30,
     ],
     [
-        textwrap.dedent("""\
-        The Apollo 11 mission, launched on July 16, 1969, was the spaceflight that first landed \
-        humans on the Moon. Commander Neil Armstrong and lunar module pilot Buzz Aldrin formed \
-        the American crew that landed the Apollo Lunar Module Eagle on July 20, 1969. Armstrong \
-        became the first person to step onto the lunar surface six hours and 39 minutes later; \
-        Aldrin joined him 19 minutes after that. They spent about two and a quarter hours together \
-        exploring the site they had named Tranquility Base upon landing. Michael Collins piloted \
-        the command module Columbia alone in lunar orbit while they were on the Moon's surface. \
-        The mission fulfilled President John F. Kennedy's 1961 goal of landing a man on the Moon \
-        and returning him safely to Earth before the end of the decade. Armstrong's first step \
-        onto the lunar surface was broadcast on live TV to a worldwide audience estimated at 600 \
-        million people. The astronauts returned to Earth and splashed down in the Pacific Ocean on \
-        July 24 after more than eight days in space. The mission carried several scientific \
-        experiments and collected 47.5 pounds of lunar material for return to Earth for analysis. \
-        Apollo 11 effectively ended the Space Race and is widely regarded as one of humanity's \
-        greatest achievements."""),
+        "The Apollo 11 mission, launched on July 16, 1969, was the spaceflight that first landed humans on the Moon. Commander Neil Armstrong and lunar module pilot Buzz Aldrin formed the American crew that landed the Apollo Lunar Module Eagle on July 20, 1969. Armstrong became the first person to step onto the lunar surface six hours and 39 minutes later; Aldrin joined him 19 minutes after that. They spent about two and a quarter hours together exploring the site they had named Tranquility Base upon landing. Michael Collins piloted the command module Columbia alone in lunar orbit while they were on the Moon's surface. The mission fulfilled President John F. Kennedy's 1961 goal of landing a man on the Moon and returning him safely to Earth before the end of the decade. Armstrong's first step onto the lunar surface was broadcast on live TV to a worldwide audience estimated at 600 million people. The astronauts returned to Earth and splashed down in the Pacific Ocean on July 24 after more than eight days in space. The mission carried several scientific experiments and collected 47.5 pounds of lunar material for return to Earth for analysis. Apollo 11 effectively ended the Space Race and is widely regarded as one of humanity's greatest achievements.",
         30,
     ],
 ]
