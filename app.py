@@ -149,7 +149,7 @@ def analyze(text: str, summary_ratio: int = 30) -> tuple[str, str, str, str]:
         if key not in seen and len(name) > 1 and ent["score"] > 0.75:
             seen.add(key)
             entities.append(
-                {"entity": name, "type": label, "score": round(ent["score"], 3)}
+                {"entity": name, "type": label, "score": round(float(ent["score"]), 3)}
             )
     entities.sort(key=lambda e: e["score"], reverse=True)
     entities_json = json.dumps(entities[:20], ensure_ascii=False)
