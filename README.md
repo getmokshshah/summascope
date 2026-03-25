@@ -16,7 +16,7 @@ SummaScope combines multiple NLP capabilities into a single, cohesive analysis t
 - **Key Phrases** — the most salient topics and concepts via YAKE keyword extraction
 - **Text Statistics** — word count, sentence count, and estimated reading time
 
-The project demonstrates practical ML engineering: model selection, inference optimization, chunking strategies for long documents, and deployment on resource-constrained infrastructure (Hugging Face Spaces free tier, CPU-only).
+The project demonstrates practical ML engineering: model selection, inference optimization, chunking strategies for long documents, and deployment in resource-constrained environments.
 
 ## Architecture
 
@@ -51,8 +51,8 @@ SummaScope Pipeline
 
 | Component | Model | Why This Model |
 |---|---|---|
-| Summarization | `distilbart-cnn-12-6` | Distilled from BART-large-CNN. Retains ~95% of BART's summarization quality at ~60% of the size. Runs on CPU in <10s for typical articles. |
-| NER | `dslim/bert-base-NER` | Fine-tuned on CoNLL-2003. Strong F1 (~91%) with a small footprint (~400 MB). Fast inference on CPU. |
+| Summarization | `distilbart-cnn-12-6` | Distilled from BART-large-CNN. Retains ~95% of BART's summarization quality at ~60% of the size. Efficient inference even in resource-constrained environments (<10s for typical articles). |
+| NER | `dslim/bert-base-NER` | Fine-tuned on CoNLL-2003. Strong F1 (~91%) with a small footprint (~400 MB). Efficient inference with minimal hardware overhead. |
 | Key Phrases | YAKE | Unsupervised — no model to load, zero additional memory. Language-agnostic and fast. Produces high-quality bi-gram keyphrases. |
 
 ## Quick Start
